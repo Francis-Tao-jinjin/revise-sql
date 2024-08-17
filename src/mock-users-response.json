@@ -1,0 +1,57 @@
+{
+	"StripeCustomerID": "cus_Qa9F2MzTOTWlIg",
+	"IsAdmin": false,
+	"ReferringUserUUID": null,
+	"DiscordUserID": null,
+	"DiscordUserHandle": null,
+	"GithubAuthToken": null,
+	"SyncedGoogleID": "118350244470385028617",
+	"SyncedGithubID": null,
+	"MembershipExpiresAt": null,
+	"MembershipPaymentType": null,
+	"DiscordBotPrivate": false,
+	"NotificationPreferences": {
+		"Reminders": {
+			"Email": true,
+			"Discord": true
+		},
+		"Promotions": {
+			"Email": true,
+			"Discord": true
+		},
+		"NewContent": {
+			"Email": true,
+			"Discord": true
+		}
+	},
+	"Email": "francistao447@gmail.com",
+	"Currency": null,
+	"XP": 9780,
+	"Level": 12,
+	"XPForLevel": 980,
+	"XPTotalForLevel": 1280,
+	"Role": "Apprentice",
+	"Gems": 0,
+	"Armor": 0,
+	"IsMember": true,
+	"UUID": "5edde8de-2161-4111-96cd-968cd29b248c",
+	"RecruitersCanContact": false,
+	"CreatedAt": "2024-08-01T13:22:15.872285Z",
+	"UpdatedAt": "2024-08-01T13:22:17.444046Z",
+	"FirstName": "Francis",
+	"LastName": "Tao",
+	"Handle": "itchysong95",
+	"Bio": null,
+	"JobTitle": null,
+	"Location": null,
+	"City": null,
+	"Country": null,
+	"TwitterHandle": null,
+	"LinkedinURL": null,
+	"GithubHandle": null,
+	"WebsiteURL": null,
+	"ProfileImageURL": "https://storage.googleapis.com/qvault-webapp-dynamic-assets/profile_images/3566ce44-f0c4-4b54-a6d1-ccd4949772cd.png",
+	"ResumeURL": null,
+	"IsRecruiter": null,
+	"GithubSynced": false
+}
