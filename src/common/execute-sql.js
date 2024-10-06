@@ -2,6 +2,39 @@ const fs = require('fs');
 const path = require('path');
 const sqlite3 = require('sqlite3').verbose();
 
+function closeDB(db) {
+  return new Promise((resolve) => {
+    db.close(() => {
+      console.log('Database connection closed');
+      resolve();
+    });
+  });
+}
+
+function executeSqlQuery(baseDir = __dirname, sqlQuery) {
+  const db = new sqlite3.Database(path.resolve(baseDir, 'db.sqlite'));
+  function close() {
+    return closeDB(db);
+  }
+
+  function executeQuery(_sqlQuery) {
+    return new Promise((resolve, reject) => {
+      db.all(_sqlQuery, (err, rows) => {
+        if (err) {
+          console.error('Error executing query:', err.message);
+          reject(err);
+        } else {
+          resolve({
+            result: rows,
+            executeQuery,
+            close,
+          });
+        }
+      });
+    });
+  }
+  return executeQuery(sqlQuery);
+}
 
 function executeSqlFile(baseDir = __dirname, fileName, afterSQL) {
 
@@ -11,12 +44,7 @@ function executeSqlFile(baseDir = __dirname, fileName, afterSQL) {
   const sql = fs.readFileSync(sqlFilePath, 'utf8');
 
   function close() {
-    return new Promise((resolve) => {
-      db.close(() => {
-        console.log('Database connection closed');
-        resolve();
-      });
-    });
+    return closeDB(db);
   }
 
   function executeQuery(sqlQuery) {
@@ -75,5 +103,6 @@ function executeSqlFile(baseDir = __dirname, fileName, afterSQL) {
 }
 
 module.exports.executeSqlFile = executeSqlFile;
+module.exports.executeSqlQuery = executeSqlQuery;
 
 // executeSqlFile('up.sql', 'crud');
