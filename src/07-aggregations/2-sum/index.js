@@ -1,0 +1,1 @@
+// SELECT sum(amount) from transactions WHERE user_id = 9 and was_successful = true;
